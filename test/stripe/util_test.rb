@@ -2,6 +2,10 @@ require File.expand_path('../../test_helper', __FILE__)
 
 module Stripe
   class UtilTest < Test::Unit::TestCase
+    should "pi" do
+      assert_equal Stripe::PaymentIntent.resource_url, "/v1/payment_intents"
+    end
+
     should "#encode_parameters should prepare parameters for an HTTP request" do
       params = {
         :a => 3,

@@ -16,8 +16,14 @@ module Stripe
     def self.resource_url
       if self == APIResource
         raise NotImplementedError.new('APIResource is an abstract class.  You should perform actions on its subclasses (Charge, Customer, etc.)')
+      # for reasons I don't want to get into right now,
+      # overwriting self.resource_url in PaymentIntent does not work
+      # hence this branch
+      elsif class_name == "PaymentIntent"
+        "/v1/payment_intents"
+      else
+        "/v1/#{CGI.escape(class_name.downcase)}s"
       end
-      "/v1/#{CGI.escape(class_name.downcase)}s"
     end
 
     def resource_url

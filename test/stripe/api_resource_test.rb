@@ -17,6 +17,10 @@ module Stripe
       })
     end
 
+    should "#resource_url special case for PaymentIntent" do
+      assert_equal Stripe::PaymentIntent.resource_url, "/v1/payment_intents"
+    end
+
     should "setting an attribute should not cause a network request" do
       @mock.expects(:get).never
       @mock.expects(:post).never
