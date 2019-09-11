@@ -55,6 +55,7 @@ module Stripe
         'order_return' => OrderReturn,
         'three_d_secure' => ThreeDSecure,
         'payment_intent' => PaymentIntent,
+        'payment_method' => PaymentMethod,
       }
     end
 

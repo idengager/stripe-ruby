@@ -58,6 +58,7 @@ require 'stripe/alipay_account'
 require 'stripe/three_d_secure'
 require 'stripe/source'
 require 'stripe/payment_intent'
+require 'stripe/payment_method'
 
 # Errors
 require 'stripe/errors/stripe_error'
