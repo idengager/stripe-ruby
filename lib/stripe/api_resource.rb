@@ -21,6 +21,8 @@ module Stripe
       # hence this branch
       elsif class_name == "PaymentIntent"
         "/v1/payment_intents"
+      elsif class_name == "PaymentMethod"
+        "/v1/payment_methods"
       else
         "/v1/#{CGI.escape(class_name.downcase)}s"
       end
